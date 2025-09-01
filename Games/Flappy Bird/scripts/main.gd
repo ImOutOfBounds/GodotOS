@@ -2,13 +2,22 @@ extends Node2D
 
 
 @export var pipe: PackedScene
-var delay = 2
-var screen_size = get_viewport_rect().size
+@export var coin: PackedScene
+var delay = 1
+var spawnPipe = false
 
 func criar_item():
-	var pipeInst = pipe.instantiate()
-	pipeInst.position = Vector2(1200, randf_range(100, screen_size.y - 100))
-	add_child(pipeInst)
+	var Inst
+	spawnPipe = !spawnPipe
+
+	if spawnPipe:
+		Inst = pipe.instantiate()
+	else:
+		Inst = coin.instantiate()
+		print("coin time")
+
+	Inst.position.x = 1200
+	add_child(Inst)
 	
 	$Timer.wait_time = delay
 	$Timer.start()
