@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dckhk4qtic5wn"]
+
+[ext_resource type="PackedScene" uid="uid://cnw1puljx6xw7" path="res://Games/Flappy Bird/scenes/bird.tscn" id="1_2dmwv"]
+[ext_resource type="Script" uid="uid://c2qcftvj6c06a" path="res://Games/Flappy Bird/scripts/main.gd" id="1_24wxf"]
+[ext_resource type="PackedScene" uid="uid://blyopvsq7qfb4" path="res://Games/Flappy Bird/scenes/pipe.tscn" id="2_a8iea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lovuv"]
+size = Vector2(1160, 52)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_24wxf")
+pipe = ExtResource("2_a8iea")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1159.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(578, 625)
+shape = SubResource("RectangleShape2D_lovuv")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -1.0
+offset_top = 601.0
+offset_right = 1159.0
+offset_bottom = 651.0
+
+[node name="Bird" parent="Area2D" instance=ExtResource("1_2dmwv")]
+position = Vector2(82, 278)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
