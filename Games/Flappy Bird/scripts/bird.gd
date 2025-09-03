@@ -22,7 +22,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
 
@@ -31,7 +30,7 @@ func _physics_process(delta):
 		get_parent().add_child(shadowInst)  
 
 	if velocity.y < 90:
-		if self.rotation > -.8:
+		if self.rotation > -.3:
 			self.rotation -= 10 * delta
 
 	else:
