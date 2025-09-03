@@ -14,7 +14,6 @@ func criar_item():
 		Inst = pipe.instantiate()
 	else:
 		Inst = coin.instantiate()
-		print("coin time")
 
 	Inst.position.x = 1200
 	add_child(Inst)

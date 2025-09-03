@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnw1puljx6xw7"]
+[gd_scene load_steps=6 format=3 uid="uid://cnw1puljx6xw7"]
 
 [ext_resource type="Script" uid="uid://cc6d3safsb85a" path="res://Games/Flappy Bird/scripts/bird.gd" id="1_vpwia"]
 [ext_resource type="PackedScene" uid="uid://gi62pdwhveux" path="res://Games/Flappy Bird/scenes/player/shadowEffect.tscn" id="2_1pmq1"]
 [ext_resource type="PackedScene" uid="uid://cfrfprsuri0dd" path="res://Games/Flappy Bird/scenes/ui/hud.tscn" id="3_dojqc"]
+[ext_resource type="PackedScene" uid="uid://dtveya3dnp8hj" path="res://Games/Flappy Bird/scenes/ui/deathScreen.tscn" id="4_lusbn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m557x"]
 size = Vector2(36, 36)
@@ -29,3 +30,7 @@ grow_vertical = 2
 shape = SubResource("RectangleShape2D_m557x")
 
 [node name="Hud" parent="." instance=ExtResource("3_dojqc")]
+
+[node name="DeathScreen" parent="." instance=ExtResource("4_lusbn")]
+
+[connection signal="start_game" from="DeathScreen" to="." method="_on_death_screen_start_game"]
