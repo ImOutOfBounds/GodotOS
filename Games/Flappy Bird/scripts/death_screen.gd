@@ -9,10 +9,10 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	# Caminho completo para o player
-	var bird = get_parent().get_node("Bird")  
+	var bird : Node = get_parent().get_node("Bird")  
 
 	# Verifica highscore
-	var new_best = bird.check_highscore()
+	var new_best : int = bird.check_highscore()
 
 	emit_signal("start_game")
 

@@ -3,19 +3,20 @@ extends Node2D
 @export var pipe: PackedScene
 @export var coin: PackedScene
 
-@onready var deathScreen = $DeathScreen
-@onready var bg = $Background
-@onready var bird = $Bird
+@onready var deathScreen: CanvasLayer = $DeathScreen
+@onready var bg: ParallaxBackground = $Background
+@onready var bird: CharacterBody2D = $Bird
 
-var delay = 1
-var spawnPipe = false
-var game_running = true 
+var delay: float = 1.0
+var spawnPipe: bool = false
+var game_running: bool = true
 
-func criar_item():
+
+func criar_item()-> void:
 	if not game_running:
 		return
 
-	var Inst
+	var Inst : Node
 	spawnPipe = !spawnPipe
 
 	if spawnPipe:
@@ -31,16 +32,16 @@ func criar_item():
 	$Timer.start()
 
 
-func _ready():
+func _ready() -> void:
 	criar_item()
 
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	criar_item()
 	$Timer.start(delay)
 	
 
-func _process(delta):
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_text_clear_carets_and_selection"):
 		get_tree().quit()
 

@@ -2,23 +2,24 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -320.0
-@export var life = 0
+var life: int = 0
 var points: int = 0
 var highscore: int = 0
 
 @export var shadow: PackedScene
-@onready var hud = $Hud
-@onready var sfx = $sfx
-@onready var song = $song
-@onready var initialPosition
+@onready var hud: CanvasLayer = $Hud
+@onready var sfx: Node = $sfx
+@onready var song: AudioStreamPlayer2D = $song
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var alive = true
+@onready var initialPosition : Vector2
+
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+var alive: bool = true
 
 func _ready() -> void:
 	initialPosition = position
 
-func add_point():
+func add_point() -> void:
 	points += 1
 	hud.set_label_text(points)
 	if sfx:
@@ -30,7 +31,7 @@ func check_highscore() -> bool:
 		return true
 	return false
 
-func _physics_process(delta): 
+func _physics_process(delta: float) -> void: 
 	if life > 0 and alive:
 		if is_on_ceiling() or is_on_wall() or is_on_floor():
 			life = 0
@@ -46,7 +47,7 @@ func _physics_process(delta):
 		# Pulo
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_VELOCITY
-			var shadowInst = shadow.instantiate()
+			var shadowInst : Node = shadow.instantiate()
 			shadowInst.position = global_position  
 			get_parent().add_child(shadowInst)  
 			if song and not song.is_playing_song:
@@ -64,7 +65,7 @@ func _physics_process(delta):
 
 		move_and_slide()
 
-func reset_player():
+func reset_player() -> void:
 	hud.set_label_text(0)
 	position = initialPosition
 	velocity = Vector2.ZERO
