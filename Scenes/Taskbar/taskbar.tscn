@@ -99,7 +99,7 @@ description_text = "THE CUBE. THE CUBE. THE CUBE."
 layout_mode = 2
 game_scene = "res://Games/Flappy Pixel/scenes/main.tscn"
 title_text = "Flappy Pixel"
-description_text = "The simplest bird, the hardest flight."
+description_text = "The simplest bird, the hardest flight"
 
 [node name="Power Button" type="Button" parent="StartMenuAnchor/Start Menu"]
 layout_mode = 1

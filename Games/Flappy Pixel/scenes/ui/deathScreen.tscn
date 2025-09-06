@@ -57,9 +57,4 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Try Again"
 
-[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
-
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

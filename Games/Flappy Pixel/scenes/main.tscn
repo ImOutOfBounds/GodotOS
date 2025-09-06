@@ -44,5 +44,6 @@ offset_bottom = 611.0
 
 [node name="DeathScreen" parent="." instance=ExtResource("5_7glhf")]
 
+[connection signal="died" from="Bird" to="." method="_on_bird_died"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="start_game" from="DeathScreen" to="." method="_on_death_screen_start_game"]

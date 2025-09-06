@@ -6,6 +6,7 @@ extends Node2D
 @onready var deathScreen: CanvasLayer = $DeathScreen
 @onready var bg: ParallaxBackground = $Background
 @onready var bird: CharacterBody2D = $Bird
+@onready var label_score: Label = $DeathScreen/Panel/VBoxContainer/Label2
 
 var delay: float = 1.0
 var spawnPipe: bool = false
@@ -65,3 +66,11 @@ func _on_death_screen_start_game() -> void:
 
 	game_running = true
 	bg.can_move = true
+
+
+func _on_bird_died() -> void:
+	var new_best: bool = bird.check_highscore()
+	if new_best:
+		label_score.text = "New Best!\nHighscore: %d" % bird.highscore
+	else:
+		label_score.text = "Highscore: %d" % bird.highscore

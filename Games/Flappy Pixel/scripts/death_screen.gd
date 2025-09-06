@@ -2,25 +2,17 @@ extends CanvasLayer
 
 signal start_game
 
+@onready var label_title: Label = $Panel/VBoxContainer/Label
+@onready var label_score: Label = $Panel/VBoxContainer/Label2
+@onready var button: Button = $Panel/VBoxContainer/Button
+
 func _ready() -> void:
-	$Panel/VBoxContainer/Label.text = "Flappy Pixel"
-	$Panel/VBoxContainer/Label2.text = ""
-	$Panel/VBoxContainer/Button.text = "Start Game"
+	label_title.text = "Flappy Pixel"
+	label_score.text = ""
+	button.text = "Start Game"
+	button.pressed.connect(_on_button_pressed)
 
 func _on_button_pressed() -> void:
-	# Caminho completo para o player
-	var bird : Node = get_parent().get_node("Bird")  
-
-	# Verifica highscore
-	var new_best : int = bird.check_highscore()
-
 	emit_signal("start_game")
-
-	# Atualiza a tela de morte
-	$Panel/VBoxContainer/Label.text = "Game Over"
-	if new_best:
-		$Panel/VBoxContainer/Label2.text = "New Best!\nHighscore: %d" % bird.highscore
-	else:
-		$Panel/VBoxContainer/Label2.text = "Highscore: %d" % bird.highscore
-
-	$Panel/VBoxContainer/Button.text = "Try Again"
+	label_title.text = "Game Over"
+	button.text = "Try Again"

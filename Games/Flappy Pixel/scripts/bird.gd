@@ -16,6 +16,8 @@ var highscore: int = 0
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var alive: bool = true
 
+signal died
+
 func _ready() -> void:
 	initialPosition = position
 
@@ -32,8 +34,9 @@ func check_highscore() -> bool:
 	return false
 
 func _physics_process(delta: float) -> void: 
-	if life > 0 and alive:
-		if is_on_ceiling() or is_on_wall() or is_on_floor():
+	if life > 0:
+		if (is_on_ceiling() or is_on_wall() or is_on_floor()) and alive:
+			emit_signal("died")
 			life = 0
 			alive = false
 			if sfx:
@@ -64,6 +67,8 @@ func _physics_process(delta: float) -> void:
 				self.rotation += 4 * delta
 
 		move_and_slide()
+	if not alive and life == 1:
+		alive = true
 
 func reset_player() -> void:
 	hud.set_label_text(0)
@@ -71,7 +76,6 @@ func reset_player() -> void:
 	velocity = Vector2.ZERO
 	rotation = 0
 	points = 0
-	alive = true
 	life = 1
 	if song:
 		song.stop_song()
