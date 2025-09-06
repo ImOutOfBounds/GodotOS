@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @export var pipe: PackedScene
 @export var coin: PackedScene
 
@@ -8,8 +7,12 @@ extends Node2D
 
 var delay = 1
 var spawnPipe = false
+var game_running = true 
 
 func criar_item():
+	if not game_running:
+		return
+
 	var Inst
 	spawnPipe = !spawnPipe
 
@@ -29,23 +32,34 @@ func criar_item():
 func _ready():
 	criar_item()
 
+
 func _on_timer_timeout():
 	criar_item()
 	$Timer.start(delay)
 	
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_text_clear_carets_and_selection"):
 		get_tree().quit()
-		
-	if $Area2D/Bird.life <= 0:
+
+	if game_running and $Area2D/Bird.life <= 0:
+		game_running = false
 		deathScreen.show()
 		
 		for obj in get_tree().get_nodes_in_group("movable"):
 			obj.canMove = false
-	else:
-		deathScreen.hide()
 
 
 func _on_death_screen_start_game() -> void:
-	$Area2D/Bird.position = $Area2D/Bird.initialPosition
-	$Area2D/Bird.life = 1
+	deathScreen.hide()
+
+	for obj in get_tree().get_nodes_in_group("movable"):
+		obj.queue_free()
+
+	$Area2D/Bird.reset_player()
+
+	game_running = true
+
+
+func _on_bird_died() -> void:
+	pass # Replace with function body.
