@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg3t4t8x526xm"
-path="res://.godot/imported/pixel.png-0342bb47162bd98857bd65f5e5a9f833.ctex"
+uid="uid://bdg4nbj78bp"
+path="res://.godot/imported/bg3.png-10223eccadd14a4500d4589ad86ea8a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Games/Flappy Bird/sprites/pixel.png"
-dest_files=["res://.godot/imported/pixel.png-0342bb47162bd98857bd65f5e5a9f833.ctex"]
+source_file="res://Games/Flappy Pixel/sprites/bg3.png"
+dest_files=["res://.godot/imported/bg3.png-10223eccadd14a4500d4589ad86ea8a2.ctex"]
 
 [params]
 

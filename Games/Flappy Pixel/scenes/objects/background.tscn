@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxnhjob8r08ie"]
+[gd_scene load_steps=5 format=3 uid="uid://bxnhjob8r08ie"]
 
-[ext_resource type="Script" uid="uid://v2chs0uam0wb" path="res://Games/Flappy Bird/scripts/background.gd" id="1_e4yoa"]
-[ext_resource type="Texture2D" uid="uid://bgvss615ybbd2" path="res://Games/Flappy Bird/sprites/bg1.png" id="1_j6x65"]
-[ext_resource type="Texture2D" uid="uid://ca5m5xb631klu" path="res://Games/Flappy Bird/sprites/bg2.png" id="2_3dnfs"]
-[ext_resource type="Texture2D" uid="uid://bdg4nbj78bp" path="res://Games/Flappy Bird/sprites/bg3.png" id="2_e4yoa"]
-[ext_resource type="Texture2D" uid="uid://crm6tvwhbe6jn" path="res://Games/Flappy Bird/sprites/bg4.png" id="5_ymnus"]
+[ext_resource type="Script" uid="uid://v2chs0uam0wb" path="res://Games/Flappy Pixel/scripts/background.gd" id="1_e4yoa"]
+[ext_resource type="Texture2D" uid="uid://bgvss615ybbd2" path="res://Games/Flappy Pixel/sprites/bg1.png" id="1_j6x65"]
+[ext_resource type="Texture2D" uid="uid://ca5m5xb631klu" path="res://Games/Flappy Pixel/sprites/bg2.png" id="2_3dnfs"]
+[ext_resource type="Texture2D" uid="uid://bdg4nbj78bp" path="res://Games/Flappy Pixel/sprites/bg3.png" id="2_e4yoa"]
 
 [node name="Background" type="ParallaxBackground"]
 script = ExtResource("1_e4yoa")
@@ -36,11 +35,3 @@ motion_mirroring = Vector2(1200, 0)
 [node name="Bg1" type="Sprite2D" parent="ParallaxLayer3"]
 position = Vector2(600, 507)
 texture = ExtResource("2_3dnfs")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(1200, 0)
-
-[node name="Bg1" type="Sprite2D" parent="ParallaxLayer4"]
-position = Vector2(600, 169)
-texture = ExtResource("5_ymnus")

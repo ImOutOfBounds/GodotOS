@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dckhk4qtic5wn"]
 
-[ext_resource type="PackedScene" uid="uid://cnw1puljx6xw7" path="res://Games/Flappy Bird/scenes/player/bird.tscn" id="1_2dmwv"]
-[ext_resource type="Script" uid="uid://c2qcftvj6c06a" path="res://Games/Flappy Bird/scripts/main.gd" id="1_24wxf"]
-[ext_resource type="PackedScene" uid="uid://blyopvsq7qfb4" path="res://Games/Flappy Bird/scenes/objects/pipe.tscn" id="2_a8iea"]
-[ext_resource type="PackedScene" uid="uid://dc602m1dy8vif" path="res://Games/Flappy Bird/scenes/objects/coin.tscn" id="3_uj3c0"]
-[ext_resource type="PackedScene" uid="uid://bxnhjob8r08ie" path="res://Games/Flappy Bird/scenes/objects/background.tscn" id="4_hcveo"]
-[ext_resource type="PackedScene" uid="uid://dtveya3dnp8hj" path="res://Games/Flappy Bird/scenes/ui/deathScreen.tscn" id="5_7glhf"]
+[ext_resource type="PackedScene" uid="uid://cnw1puljx6xw7" path="res://Games/Flappy Pixel/scenes/player/bird.tscn" id="1_2dmwv"]
+[ext_resource type="Script" uid="uid://c2qcftvj6c06a" path="res://Games/Flappy Pixel/scripts/main.gd" id="1_24wxf"]
+[ext_resource type="PackedScene" uid="uid://blyopvsq7qfb4" path="res://Games/Flappy Pixel/scenes/objects/pipe.tscn" id="2_a8iea"]
+[ext_resource type="PackedScene" uid="uid://dc602m1dy8vif" path="res://Games/Flappy Pixel/scenes/objects/coin.tscn" id="3_uj3c0"]
+[ext_resource type="PackedScene" uid="uid://bxnhjob8r08ie" path="res://Games/Flappy Pixel/scenes/objects/background.tscn" id="4_hcveo"]
+[ext_resource type="PackedScene" uid="uid://dtveya3dnp8hj" path="res://Games/Flappy Pixel/scenes/ui/deathScreen.tscn" id="5_7glhf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lovuv"]
 size = Vector2(1160, 52)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca5m5xb631klu"
-path="res://.godot/imported/bg2.png-408d38fda0445a3b8b6db2baaf56d762.ctex"
+path="res://.godot/imported/bg2.png-a8b72c60a58c2517c78ed8c6fa3a36de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Games/Flappy Bird/sprites/bg2.png"
-dest_files=["res://.godot/imported/bg2.png-408d38fda0445a3b8b6db2baaf56d762.ctex"]
+source_file="res://Games/Flappy Pixel/sprites/bg2.png"
+dest_files=["res://.godot/imported/bg2.png-a8b72c60a58c2517c78ed8c6fa3a36de.ctex"]
 
 [params]
 

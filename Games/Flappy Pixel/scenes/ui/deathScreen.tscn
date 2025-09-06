@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtveya3dnp8hj"]
 
-[ext_resource type="Script" uid="uid://c74qj78qp55ot" path="res://Games/Flappy Bird/scripts/death_screen.gd" id="1_78sdb"]
+[ext_resource type="Script" uid="uid://c74qj78qp55ot" path="res://Games/Flappy Pixel/scripts/death_screen.gd" id="1_78sdb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbo0y"]
 bg_color = Color(0, 0, 0, 1)
