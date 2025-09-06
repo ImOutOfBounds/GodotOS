@@ -11,7 +11,6 @@ func _ready():
 	play()
 	generator_playback = get_stream_playback()
 
-# Função para gerar beep 1-bit
 func play_beep(frequency: float, duration: float = 0.1):
 	if not generator_playback:
 		return
@@ -27,13 +26,10 @@ func play_beep(frequency: float, duration: float = 0.1):
 			value = -1.0
 		generator_playback.push_frame(Vector2(value, value))
 
-
-# Som de moeda
 func play_coin():
 	play_beep(8000, 0.1)
 	await get_tree().create_timer(0.1).timeout
 	play_beep(2000, 0.1)
 
-# Som de morte
 func play_death():
 	play_beep(220, 0.3)

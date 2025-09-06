@@ -9,6 +9,7 @@ var highscore: int = 0
 @export var shadow: PackedScene
 @onready var hud = $Hud
 @onready var sfx = $sfx
+@onready var song = $song
 @onready var initialPosition
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -21,10 +22,9 @@ func add_point():
 	points += 1
 	hud.set_label_text(points)
 	if sfx:
-		sfx.play_coin()  # toca som de moeda
+		sfx.play_coin() 
 
 func check_highscore() -> bool:
-	# Retorna true se for um novo highscore
 	if points > highscore:
 		highscore = points
 		return true
@@ -32,12 +32,13 @@ func check_highscore() -> bool:
 
 func _physics_process(delta): 
 	if life > 0 and alive:
-		# Checa colisão com chão, parede ou teto
 		if is_on_ceiling() or is_on_wall() or is_on_floor():
 			life = 0
 			alive = false
 			if sfx:
-				sfx.play_death()  # toca som de morte
+				sfx.play_death()
+			if song:
+				song.stop_song()
 
 		if not is_on_floor():
 			velocity.y += gravity * delta
@@ -48,8 +49,9 @@ func _physics_process(delta):
 			var shadowInst = shadow.instantiate()
 			shadowInst.position = global_position  
 			get_parent().add_child(shadowInst)  
+			if song and not song.is_playing_song:
+				song.start_song()
 
-		# Rotação do sprite
 		if velocity.y < 90:
 			if self.rotation > -.3:
 				self.rotation -= 10 * delta
@@ -70,3 +72,5 @@ func reset_player():
 	points = 0
 	alive = true
 	life = 1
+	if song:
+		song.stop_song()
