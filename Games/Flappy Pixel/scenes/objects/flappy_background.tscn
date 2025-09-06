@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxnhjob8r08ie"]
 
-[ext_resource type="Script" uid="uid://v2chs0uam0wb" path="res://Games/Flappy Pixel/scripts/background.gd" id="1_e4yoa"]
-[ext_resource type="Texture2D" uid="uid://bgvss615ybbd2" path="res://Games/Flappy Pixel/sprites/bg1.png" id="1_j6x65"]
-[ext_resource type="Texture2D" uid="uid://ca5m5xb631klu" path="res://Games/Flappy Pixel/sprites/bg2.png" id="2_3dnfs"]
-[ext_resource type="Texture2D" uid="uid://bdg4nbj78bp" path="res://Games/Flappy Pixel/sprites/bg3.png" id="2_e4yoa"]
+[ext_resource type="Script" uid="uid://v2chs0uam0wb" path="res://Games/Flappy Pixel/scripts/flappy_background.gd" id="1_e4yoa"]
+[ext_resource type="Texture2D" uid="uid://bgvss615ybbd2" path="res://Games/Flappy Pixel/sprites/flappy_bg1.png" id="1_j6x65"]
+[ext_resource type="Texture2D" uid="uid://ca5m5xb631klu" path="res://Games/Flappy Pixel/sprites/flappy_bg2.png" id="2_3dnfs"]
+[ext_resource type="Texture2D" uid="uid://bdg4nbj78bp" path="res://Games/Flappy Pixel/sprites/flappy_bg3.png" id="2_e4yoa"]
 
 [node name="Background" type="ParallaxBackground"]
 script = ExtResource("1_e4yoa")

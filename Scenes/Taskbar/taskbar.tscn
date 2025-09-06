@@ -97,7 +97,7 @@ description_text = "THE CUBE. THE CUBE. THE CUBE."
 
 [node name="Flappy Pixel Option" parent="StartMenuAnchor/Start Menu/VBoxContainer" instance=ExtResource("2_1ualm")]
 layout_mode = 2
-game_scene = "res://Games/Flappy Pixel/scenes/main.tscn"
+game_scene = "res://Games/Flappy Pixel/scenes/flappy_main.tscn"
 title_text = "Flappy Pixel"
 description_text = "The simplest bird, the hardest flight"
 

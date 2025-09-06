@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfrfprsuri0dd"]
 
-[ext_resource type="Script" uid="uid://cb0ix1v5kxgi8" path="res://Games/Flappy Pixel/scripts/hud.gd" id="1_smeyw"]
+[ext_resource type="Script" uid="uid://cb0ix1v5kxgi8" path="res://Games/Flappy Pixel/scripts/flappy_hud.gd" id="1_smeyw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rfwl"]
 bg_color = Color(0, 0, 0, 1)

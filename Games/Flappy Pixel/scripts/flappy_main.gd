@@ -95,12 +95,12 @@ func _on_bird_died() -> void:
 	elif score >= MedalTitles.LEGEND:
 		medal.bbcode_text = "[rainbow sat=0.9 val=1 freq=1]Legendary[/rainbow]"
 	elif score >= MedalTitles.MASTER:
-		medal.bbcode_text = "[wave amp=20 freq=6]Master Player[/wave]"
+		medal.bbcode_text = "[wave amp=20 freq=6]Master Player![/wave]"
 	elif score >= MedalTitles.PRO:
-		medal.bbcode_text = "[wave amp=15 freq=4]Pro Gamer[/wave]"
+		medal.bbcode_text = "[wave amp=15 freq=4]Pro Gamer XD[/wave]"
 	elif score >= MedalTitles.NICE:
-		medal.bbcode_text = "[color=yellow]Pretty Nice[/color]"
+		medal.bbcode_text = "[color=yellow]Pretty Nice![/color]"
 	elif score >= MedalTitles.GETTING_BETTER:
-		medal.bbcode_text = "[color=green]We are getting better[/color]"
+		medal.bbcode_text = "[color=green]We are getting better...[/color]"
 	else:
 		medal.bbcode_text = "[color=gray]Bruh[/color]"
