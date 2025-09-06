@@ -27,11 +27,18 @@ collision_layer = 2
 position = Vector2(578, 625)
 shape = SubResource("RectangleShape2D_lovuv")
 
-[node name="ColorRect" type="ColorRect" parent="Area2D"]
+[node name="ColorRect2" type="ColorRect" parent="Area2D"]
 offset_left = -1.0
-offset_top = 601.0
+offset_top = 607.0
 offset_right = 1159.0
 offset_bottom = 651.0
+color = Color(0.92, 0.92, 0.92, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -1.0
+offset_top = 597.0
+offset_right = 1159.0
+offset_bottom = 611.0
 
 [node name="Timer" type="Timer" parent="."]
 

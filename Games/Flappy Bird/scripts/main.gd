@@ -4,6 +4,8 @@ extends Node2D
 @export var coin: PackedScene
 
 @onready var deathScreen = $DeathScreen
+@onready var bg = $Background
+@onready var bird = $Bird
 
 var delay = 1
 var spawnPipe = false
@@ -42,12 +44,14 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_text_clear_carets_and_selection"):
 		get_tree().quit()
 
-	if game_running and $Bird.life <= 0:
+	if game_running and bird.life <= 0:
 		game_running = false
 		deathScreen.show()
-		
+
 		for obj in get_tree().get_nodes_in_group("movable"):
 			obj.canMove = false
+
+		bg.can_move = false
 
 
 func _on_death_screen_start_game() -> void:
@@ -56,10 +60,7 @@ func _on_death_screen_start_game() -> void:
 	for obj in get_tree().get_nodes_in_group("movable"):
 		obj.queue_free()
 
-	$Bird.reset_player()
+	bird.reset_player()
 
 	game_running = true
-
-
-func _on_bird_died() -> void:
-	pass # Replace with function body.
+	bg.can_move = true

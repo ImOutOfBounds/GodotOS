@@ -17,6 +17,13 @@ offset_top = 112.0
 offset_right = 40.0
 offset_bottom = 572.0
 
+[node name="ColorRect2" type="ColorRect" parent="Area2D2"]
+offset_left = -45.0
+offset_top = 108.0
+offset_right = 45.0
+offset_bottom = 127.0
+color = Color(0.77, 0.77, 0.77, 1)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(0, 340)
 shape = SubResource("RectangleShape2D_yy4kw")
@@ -33,3 +40,10 @@ offset_bottom = -103.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(1, -331)
 shape = SubResource("RectangleShape2D_yy4kw")
+
+[node name="ColorRect2" type="ColorRect" parent="Area2D3"]
+offset_left = -44.0
+offset_top = -120.0
+offset_right = 46.0
+offset_bottom = -101.0
+color = Color(0.77, 0.77, 0.77, 1)

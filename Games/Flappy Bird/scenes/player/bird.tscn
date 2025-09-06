@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnw1puljx6xw7"]
+[gd_scene load_steps=7 format=3 uid="uid://cnw1puljx6xw7"]
 
 [ext_resource type="Script" uid="uid://cc6d3safsb85a" path="res://Games/Flappy Bird/scripts/bird.gd" id="1_vpwia"]
 [ext_resource type="PackedScene" uid="uid://gi62pdwhveux" path="res://Games/Flappy Bird/scenes/player/shadowEffect.tscn" id="2_1pmq1"]
 [ext_resource type="PackedScene" uid="uid://cfrfprsuri0dd" path="res://Games/Flappy Bird/scenes/ui/hud.tscn" id="3_dojqc"]
+[ext_resource type="Script" uid="uid://d03p5wc715855" path="res://Games/Flappy Bird/scripts/sfx.gd" id="4_lusbn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m557x"]
 size = Vector2(36, 36)
 
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_0jpsh"]
+
 [node name="Bird" type="CharacterBody2D"]
+z_index = 1
 collision_mask = 2
 script = ExtResource("1_vpwia")
 shadow = ExtResource("2_1pmq1")
@@ -29,3 +33,7 @@ grow_vertical = 2
 shape = SubResource("RectangleShape2D_m557x")
 
 [node name="Hud" parent="." instance=ExtResource("3_dojqc")]
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamGenerator_0jpsh")
+script = ExtResource("4_lusbn")

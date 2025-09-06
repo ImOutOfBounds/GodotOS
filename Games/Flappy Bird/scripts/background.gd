@@ -1,13 +1,9 @@
 extends ParallaxBackground
 
-
 var background_fundo: Vector2 = Vector2()
-
-func _ready():
-	pass # Replace with function body.
-
-
+var can_move: bool = true 
 
 func _process(delta):
-	background_fundo.x -= 1
-	set_scroll_offset(background_fundo)
+	if can_move:
+		background_fundo.x -= 1
+		set_scroll_offset(background_fundo)
