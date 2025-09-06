@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gi62pdwhveux"]
 
-[ext_resource type="Texture2D" uid="uid://bg3t4t8x526xm" path="res://Games/Flappy Bird/pixel.png" id="1_fw6ui"]
+[ext_resource type="Texture2D" uid="uid://bg3t4t8x526xm" path="res://Games/Flappy Bird/sprites/pixel.png" id="1_fw6ui"]
 [ext_resource type="Script" uid="uid://ryjsymhbpef6" path="res://Games/Flappy Bird/scripts/shadow_effect.gd" id="1_rj05e"]
 
 [node name="ShadowEffect" type="Sprite2D"]

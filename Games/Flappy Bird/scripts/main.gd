@@ -42,7 +42,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_text_clear_carets_and_selection"):
 		get_tree().quit()
 
-	if game_running and $Area2D/Bird.life <= 0:
+	if game_running and $Bird.life <= 0:
 		game_running = false
 		deathScreen.show()
 		
@@ -56,7 +56,7 @@ func _on_death_screen_start_game() -> void:
 	for obj in get_tree().get_nodes_in_group("movable"):
 		obj.queue_free()
 
-	$Area2D/Bird.reset_player()
+	$Bird.reset_player()
 
 	game_running = true
 

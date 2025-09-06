@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	# Caminho completo para o player
-	var bird = get_parent().get_node("Area2D/Bird")  
+	var bird = get_parent().get_node("Bird")  
 
 	# Verifica highscore
 	var new_best = bird.check_highscore()
