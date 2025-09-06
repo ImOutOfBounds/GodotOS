@@ -12,6 +12,7 @@ func _on_button_pressed() -> void:
 	$Panel/VBoxContainer/Label.text = "Game Over"
 	$Panel/VBoxContainer/Label2.text = "Score: x"
 	$Panel/VBoxContainer/Button.text = "Try Again"
+	self.hide()
 
 
 func _on_button_2_pressed() -> void:

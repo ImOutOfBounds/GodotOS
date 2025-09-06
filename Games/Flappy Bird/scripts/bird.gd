@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -320.0
-var life = 0
+@export var life = 0
 var points: int = 0
 
 @export var shadow: PackedScene
@@ -20,7 +20,6 @@ func add_point():
 
 func _physics_process(delta): 
 	if life > 0:
-		$DeathScreen.hide()
 		
 		if is_on_ceiling() or is_on_wall() or is_on_floor():
 			life = 0
@@ -47,10 +46,3 @@ func _physics_process(delta):
 				self.rotation += 4 * delta
 
 		move_and_slide()
-	else:
-		$DeathScreen.show()
-
-
-func _on_death_screen_start_game() -> void:
-	position = initialPosition
-	life = 1
